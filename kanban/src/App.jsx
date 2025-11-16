@@ -5,6 +5,8 @@ import { Routes, Route, Link } from 'react-router-dom';
 import './App.css'
 import Board from './Pages/Board'
 import Test from './Pages/Test'
+import NavBar from './components/NavBar';
+import Login from './Pages/Login'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,19 +14,12 @@ function App() {
   return (
     <>
       <div className='flex h-screen'>
-        <nav className='flex flex-col gap-3 text-center w-[10%]'>
-          <Link to='/board' className='p-2 w-100 bg-white rounded-full hover:bg-gray-300'>Board</Link>
-          <Link to='/board' className='p-2 w-100 bg-white rounded-full hover:bg-gray-300'>Board</Link>
-          <Link to='/board' className='p-2 w-100 bg-white rounded-full hover:bg-gray-300'>Board</Link>
-          <Link to='/board' className='p-2 w-100 bg-white rounded-full hover:bg-gray-300'>Board</Link>
-          <h1>Dummy</h1>
-          <Link to='/test' className='p-2 w-100 bg-white rounded-full hover:bg-gray-300'>Test</Link>
-          <Link to='/test' className='p-2 w-100 bg-white rounded-full hover:bg-gray-300'>Test</Link>
-         </nav>
+        <NavBar />
         <div className='flex-1'>
           <Routes>
             <Route path='/board' element={<Board />}></Route>
             <Route path='/test' element={<Test />}></Route>
+            <Route path='/login' element={<Login />}></Route>
           </Routes>
         </div>
       </div>
